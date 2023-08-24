@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+body,
+#root {
+  height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -15,12 +17,14 @@ h1,
 h2,
 h3,
 select,
-svg {
+svg,
+input {
   @apply text-darkgray;
 }
 
 p,
-span {
+span,
+input::placeholder {
   @apply text-lightgray;
 }
 
@@ -30,4 +34,16 @@ select {
   -webkit-appearance: none; /* for chrome */
   -moz-appearance: none; /*for firefox*/
   appearance: none;
+}
+
+input {
+  outline: none;
+}
+
+div {
+  -webkit-touch-callout: none;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
 }
