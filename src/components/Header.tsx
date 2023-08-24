@@ -16,9 +16,9 @@ const Header = () => {
           <img
             alt="프로필 사진"
             src="/images/profile.jpeg"
-            className="w-8 h-8 rounded-full mr-1 object-cover"
+            className="w-7 h-7 lg:w-8 lg:h-8 rounded-full mr-1 object-cover"
           />
-          <IoMdArrowDropdown size={22} />
+          <IoMdArrowDropdown size={20} />
         </div>
       </div>
     </header>
