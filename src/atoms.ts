@@ -1,14 +1,14 @@
 import { atom } from "recoil";
+import { ICardDetail } from "card";
+import { IModalState } from "modal";
 
-export interface ICardData {
-  deadline: Date;
-  rate: number;
-  title: string;
-  content: string;
-}
-
-export const isModalVisible = atom({
+export const modalState = atom<IModalState>({
   key: "isModalVisible",
+  default: { isVisible: false, type: "add" },
+});
+
+export const isCardDragging = atom({
+  key: "isCardSelected",
   default: false,
 });
 
@@ -17,7 +17,7 @@ export const currentAddGroupIdx = atom({
   default: 0,
 });
 
-export const groupList = atom<ICardData[][]>({
+export const groupList = atom<ICardDetail[][]>({
   key: "groupList",
   default: [[], [], [], []],
 });
