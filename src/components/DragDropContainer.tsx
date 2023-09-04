@@ -2,7 +2,7 @@ import { DragDropContext, DraggableLocation, DropResult } from "react-beautiful-
 import WorkListCRUDModalRouter from "./WorkListCRUDModalRouter";
 import DroppableList from "./DroppableList";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { useDeferredValue, useState } from "react";
+import { useDeferredValue, useEffect, useState } from "react";
 import { IDraggedCardDetail } from "card";
 import { groupList, isCardDragging, modalState } from "../atoms";
 import DroppableCategories from "./DroppableCategories";
@@ -41,7 +41,9 @@ const DragDropContainer = () => {
     const startCard = copiedGroupList[startCategoryId].splice(startCardId, 1)[0];
     copiedGroupList[endCategoryId].splice(endCardId, 0, startCard);
     setNGroupList(copiedGroupList);
+    localStorage.setItem("groupList", JSON.stringify(copiedGroupList));
     ASetIsCardDragging(false);
+    console.log(copiedGroupList);
   };
 
   const verifyResult = ({ destination, source }: DropResult) => {
@@ -68,8 +70,17 @@ const DragDropContainer = () => {
     const newGroupList = structuredClone(nGroupList);
     newGroupList[parseInt(droppableId)].splice(index, 1);
     setNGroupList(newGroupList);
+    localStorage.setItem("groupList", JSON.stringify(newGroupList));
     ASetIsCardDragging(false);
   };
+
+  useEffect(() => {
+    const localGroupList = localStorage.getItem("groupList");
+    if (localGroupList) {
+      setNGroupList(JSON.parse(localGroupList));
+    }
+  }, [setNGroupList]);
+
   return (
     <DragDropContext onDragStart={onDragStart} onDragEnd={onDragEnd}>
       <DroppableCategories />

@@ -43,7 +43,7 @@ const DroppableWorkList = ({
               type="button"
               className={`w-10 h-10 rounded-full flex justify-center items-center absolute z-20 bg-yellow ${
                 workList.length
-                  ? "-top-4 -right-4"
+                  ? "-top-5 -right-5"
                   : "top-[3rem] -translate-y-1/2 right-1/2 translate-x-1/2 "
               }`}
               onClick={showModal}

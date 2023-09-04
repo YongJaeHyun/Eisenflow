@@ -29,13 +29,18 @@ const Dropdown = ({ title, content }: IDropdown) => {
       </div>
       <div onTransitionEnd={handleTransitionEnd} className="overflow-hidden">
         <p
-          className={`transition-all text-darkgray leading-5 pt-2 ${
+          className={`transition-all leading-6 pt-2 ${
             !triggerAnimation
               ? "max-h-0 duration-[200ms] ease-out"
               : `max-h-screen duration-[300ms] ease-in`
           }`}
         >
-          {content}
+          {content.split(/\r|\n|\r\n/).map((row, idx) => (
+            <span className="text-darkgray" key={idx}>
+              {row}
+              <br />
+            </span>
+          ))}
         </p>
       </div>
     </>

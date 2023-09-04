@@ -15,9 +15,12 @@ const DroppableWorkListCard = ({
   const deadlineDate = new Date(deadline);
   const month = deadlineDate.getMonth() + 1;
   const days = deadlineDate.getDate();
-
   return (
-    <Draggable draggableId={deadline + rate + title + content} index={idx}>
+    <Draggable
+      draggableId={deadline + rate + title + content}
+      index={idx}
+      key={deadline + rate + title + content}
+    >
       {(provided) => (
         <div
           className="flex border-b bg-white"
