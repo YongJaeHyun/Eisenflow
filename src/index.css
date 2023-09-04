@@ -36,8 +36,13 @@ select {
   appearance: none;
 }
 
-input {
+input,
+textarea {
   outline: none;
+}
+
+textarea {
+  resize: none;
 }
 
 div {
