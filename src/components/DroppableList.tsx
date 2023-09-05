@@ -24,7 +24,7 @@ const DroppableList = ({ value, idx, className }: IDroppableList) => {
               <div
                 {...provided.dragHandleProps}
                 ref={provided.innerRef}
-                className="w-[40%] h-24"
+                className="w-[97%] lg:w-[41%] h-[6.2rem] -ml-2 -mt-2"
               >
                 {AIsCardDragging && (
                   <p

@@ -17,7 +17,7 @@ const DroppableCategories = () => {
   const nGroupList = useRecoilValue(groupList);
 
   return (
-    <main className="h-full lg:h-[calc(100%-4.75rem)]">
+    <main className="h-[90%] lg:h-[calc(100%-4.75rem)]">
       <GroupInfo />
       <section className="grid grid-cols-2 grid-rows-2 lg:flex lg:justify-between gap-5 lg:gap-10 lg:mt-5 relative">
         <span className="w-screen absolute h-0 lg:h-0.5 bg-linegray -left-20 top-[2.95rem] z-10"></span>

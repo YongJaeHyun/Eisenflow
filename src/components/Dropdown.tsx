@@ -18,12 +18,12 @@ const Dropdown = ({ title, content }: IDropdown) => {
   return (
     <>
       <div className="w-full flex justify-between items-center">
-        <h3 className="font-semibold break-keep">{title}</h3>
+        <h3 className="font-semibold break-keep text-base">{title}</h3>
         <button type="button" onClick={toggleIsVisible}>
           {isVisible ? (
-            <IoMdArrowDropup size={20} className="mt-0.5" />
+            <IoMdArrowDropup className="mt-0.5 text-xl" />
           ) : (
-            <IoMdArrowDropdown size={20} className="mt-0.5" />
+            <IoMdArrowDropdown className="mt-0.5 text-xl" />
           )}
         </button>
       </div>
@@ -36,7 +36,7 @@ const Dropdown = ({ title, content }: IDropdown) => {
           }`}
         >
           {content.split(/\r|\n|\r\n/).map((row, idx) => (
-            <span className="text-darkgray" key={idx}>
+            <span className="text-darkgray text-base" key={idx}>
               {row}
               <br />
             </span>

@@ -28,11 +28,11 @@ const DroppableWorkListCard = ({
           {...provided.dragHandleProps}
           ref={provided.innerRef}
         >
-          <div className="w-full px-8 my-5">
+          <div className="w-full px-4 lg:px-8 my-3 lg:my-5">
             <div className="flex justify-between mb-1">
-              <span className="text-sm">{`~${month}월 ${days}일`}</span>
+              <span className="text-3md">{`~${month}월 ${days}일`}</span>
               <div className="flex items-center">
-                <Rate rate={rate} size={12} />
+                <Rate rate={rate} className="text-2md" />
               </div>
             </div>
             <Dropdown title={title} content={content} />

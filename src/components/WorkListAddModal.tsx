@@ -67,7 +67,7 @@ const WorkListAddModal = ({ type }: IWorkListAddModal) => {
           </p>
         </div>
         <div className="w-full ml-10 px-2 border-b mr-1 pb-1.5">
-          <Rate rate={rate} setRate={setRate} size={16} />
+          <Rate rate={rate} setRate={setRate} className="text-sm lg:text-base" />
         </div>
       </div>
       <div className="flex">
@@ -89,7 +89,7 @@ const WorkListAddModal = ({ type }: IWorkListAddModal) => {
           <p className="text-right text-darkgray">내용&nbsp;</p>
         </div>
         <textarea
-          className="w-full ml-10 px-2 border-b pb-1.5 mr-1"
+          className="w-full ml-10 px-2 border-b pb-1.5 mr-1 text-darkgray"
           placeholder="내용을 입력해주세요."
           spellCheck="false"
           value={content}

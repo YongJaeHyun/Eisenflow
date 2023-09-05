@@ -3,7 +3,7 @@ import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="h-full px-5 lg:px-20  lg:text-base">
+    <div className="h-full px-7 lg:px-20 lg:text-base">
       <Header />
       <DragDropContainer />
     </div>

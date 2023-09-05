@@ -41,10 +41,10 @@ const DroppableWorkList = ({
           <div className="bg-white shadow-lg relative">
             <button
               type="button"
-              className={`w-10 h-10 rounded-full flex justify-center items-center absolute z-20 bg-yellow ${
+              className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full flex justify-center items-center absolute z-20 bg-yellow ${
                 workList.length
-                  ? "-top-5 -right-5"
-                  : "top-[3rem] -translate-y-1/2 right-1/2 translate-x-1/2 "
+                  ? "-top-4 -right-4 lg:-top-5 lg:-right-5"
+                  : "top-[2.5rem] lg:top-12 -translate-y-1/2 right-1/2 translate-x-1/2 "
               }`}
               onClick={showModal}
             >
@@ -55,7 +55,7 @@ const DroppableWorkList = ({
                 <DroppableWorkListCard key={idx} cardDetail={cardDetail} idx={idx} />
               ))
             ) : (
-              <div className="w-full h-24 bg-white shadow-lg absolute"></div>
+              <div className="w-full h-[5.1rem] lg:h-24 bg-white shadow-lg absolute"></div>
             )}
             {provided.placeholder}
           </div>

@@ -3,10 +3,10 @@ import { BsStarFill } from "react-icons/bs";
 interface IRate {
   rate: number;
   setRate?: React.Dispatch<React.SetStateAction<number>>;
-  size: number;
+  className: string;
 }
 
-const Rate = ({ rate, setRate, size }: IRate) => {
+const Rate = ({ rate, setRate, className }: IRate) => {
   return (
     <>
       {Array(5)
@@ -15,8 +15,7 @@ const Rate = ({ rate, setRate, size }: IRate) => {
           setRate ? (
             <button type="button" key={idx} onClick={() => setRate(idx)}>
               <BsStarFill
-                size={size}
-                className={`${rate >= idx ? "text-yellow" : "text-lightgray"} ${
+                className={`${className} ${rate >= idx ? "text-yellow" : "text-lightgray"} ${
                   idx === 4 && "mr-1"
                 }`}
               />
@@ -24,8 +23,7 @@ const Rate = ({ rate, setRate, size }: IRate) => {
           ) : (
             <p key={idx}>
               <BsStarFill
-                size={size}
-                className={`${rate >= idx ? "text-yellow" : "text-lightgray"} ${
+                className={`${className} ${rate >= idx ? "text-yellow" : "text-lightgray"} ${
                   idx === 4 && "mr-1"
                 }`}
               />
