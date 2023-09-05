@@ -43,7 +43,6 @@ const DragDropContainer = () => {
     setNGroupList(copiedGroupList);
     localStorage.setItem("groupList", JSON.stringify(copiedGroupList));
     ASetIsCardDragging(false);
-    console.log(copiedGroupList);
   };
 
   const verifyResult = ({ destination, source }: DropResult) => {
