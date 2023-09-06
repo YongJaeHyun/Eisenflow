@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Eisenflow/static/css/main.74aefdf2.css",
-    "main.js": "/Eisenflow/static/js/main.767d26a8.js",
+    "main.css": "/Eisenflow/static/css/main.5e4756c6.css",
+    "main.js": "/Eisenflow/static/js/main.5b716d36.js",
     "index.html": "/Eisenflow/index.html",
-    "main.74aefdf2.css.map": "/Eisenflow/static/css/main.74aefdf2.css.map",
-    "main.767d26a8.js.map": "/Eisenflow/static/js/main.767d26a8.js.map"
+    "main.5e4756c6.css.map": "/Eisenflow/static/css/main.5e4756c6.css.map",
+    "main.5b716d36.js.map": "/Eisenflow/static/js/main.5b716d36.js.map"
   },
   "entrypoints": [
-    "static/css/main.74aefdf2.css",
-    "static/js/main.767d26a8.js"
+    "static/css/main.5e4756c6.css",
+    "static/js/main.5b716d36.js"
   ]
 }
