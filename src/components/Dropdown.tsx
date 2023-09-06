@@ -15,6 +15,9 @@ const Dropdown = ({ title, content }: IDropdown) => {
     setIsVisible((prev) => !prev);
   };
 
+  const websiteReg =
+    /(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+
   return (
     <>
       <div className="w-full flex justify-between items-center">
@@ -27,7 +30,7 @@ const Dropdown = ({ title, content }: IDropdown) => {
           )}
         </button>
       </div>
-      <div onTransitionEnd={handleTransitionEnd} className="overflow-hidden">
+      <div onTransitionEnd={handleTransitionEnd} className="overflow-hidden select-text">
         <p
           className={`transition-all leading-6 pt-2 ${
             !triggerAnimation
@@ -35,12 +38,19 @@ const Dropdown = ({ title, content }: IDropdown) => {
               : `max-h-screen duration-[300ms] ease-in`
           }`}
         >
-          {content.split(/\r|\n|\r\n/).map((row, idx) => (
-            <span className="text-darkgray text-base" key={idx}>
-              {row}
-              <br />
-            </span>
-          ))}
+          {content.split(/\r|\n|\r\n/).map((row, idx) =>
+            websiteReg.test(row) ? (
+              <a href={row} target="_blank" key={idx} rel="noreferrer">
+                {row}
+                <br />
+              </a>
+            ) : (
+              <span className="text-darkgray text-base" key={idx}>
+                {row}
+                <br />
+              </span>
+            )
+          )}
         </p>
       </div>
     </>
